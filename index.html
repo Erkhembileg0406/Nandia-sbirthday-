@@ -3,30 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-
-  <!-- Optional: link your CSS -->
-  <link rel="stylesheet" href="style.css">
+  <title>Birthday Surprise 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Roboto', sans-serif; background: linear-gradient(135deg, #FFC1CC, #FFDEE9); color: #fff; min-height: 100vh; overflow-x: hidden; }
+    header { padding: 15px 10px; text-align: center; position: sticky; top: 0; background: rgba(255, 192, 203, 0.95); z-index: 1000; }
+    h1 { font-family: 'Parisienne', cursive; font-size: 2.5em; margin: 0; line-height: 1.2; }
+    nav { margin-top: 10px; display:flex; flex-wrap:wrap; justify-content:center; gap: 8px; }
+    nav button { padding: 10px 15px; border: none; border-radius: 8px; background: #FF4B7C; color: #fff; font-size: 1em; cursor: pointer; transition: background 0.3s; }
+    nav button:hover { background: #FF6F91; }
+    section { padding: 40px 15px; min-height: 80vh; display: none; text-align: center; animation: fadeIn 1s ease-in-out; }
+    section.active { display: block; }
+    .countdown { font-size: 1.8em; margin-top: 20px; color: #FF6F91; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .gallery img { width: 45%; margin: 5px; border-radius: 10px; }
+    @media (max-width: 480px) { h1 { font-size: 1.8em; } .countdown { font-size: 1.2em; } nav button { font-size: 0.8em; padding: 6px 10px; } .gallery img { width: 90%; margin: 5px auto; display: block; } }
+  </style>
 </head>
 <body>
 
+  <!-- Heart Container -->
+  <div id="heartContainer" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:9999;"></div>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Header & Menu -->
   <header>
-    <h1>Hello1 </h1>
-    <p>Welcome to my website</p>
+    <h1>Birthday Surprise 💖</h1>
+    <nav>
+      <button id="homeBtn">Home</button>
+      <button id="loveBtn">Reasons I Love You</button>
+      <button id="giftBtn">Virtual Gift Box</button>
+      <button id="puzzleBtn">Puzzle / Riddle Game</button>
+      <button id="galleryBtn">Animated Gallery</button>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>This is a basic HTML starter page.</p>
-    </section>
-  </main>
+  <!-- Sections -->
+  <section id="home" class="active">
+    <h2>Countdown to December 30 🎂</h2>
+    <div class="countdown" id="countdown">Loading...</div>
+  </section>
 
-  <footer>
-    <p>© 2025.12.30</p>
-  </footer>
+  <section id="love">
+    <h2>Reasons I Love You ❤️</h2>
+    <p>Add your text and images here:</p>
+    <ul>
+      <li>Your smile brightens my day</li>
+      <li>You make everything fun</li>
+      <li>Your kindness inspires me</li>
+      <li>You are my safe place</li>
+      <li>Your laughter is contagious</li>
+    </ul>
+    <img src="https://via.placeholder.com/300/FFB6C1/fff?text=Memory1" alt="Memory 1" style="max-width:100%; border-radius:10px; margin:10px 0;">
+    <img src="https://via.placeholder.com/300/FF69B4/fff?text=Memory2" alt="Memory 2" style="max-width:100%; border-radius:10px; margin:10px 0;">
+  </section>
 
-  <!-- Optional: link your JS -->
-  <script src="script.js"></script>
+  <section id="gift">
+    <h2>Virtual Gift Box 🎁</h2>
+    <p>Add your gift images or text here:</p>
+    <button onclick="alert('Surprise! You are my greatest gift 🥰')">Open Gift</button>
+    <img src="https://via.placeholder.com/300/FF1493/fff?text=Gift" alt="Gift" style="max-width:100%; border-radius:10px; margin:10px 0;">
+  </section>
+
+  <section id="puzzle">
+    <h2>Puzzle / Riddle Game 🧩</h2>
+    <p>Example: What has keys but can’t open locks?</p>
+    <button onclick="alert('Answer: A piano! 🎹')">Show Answer</button>
+    <img src="https://via.placeholder.com/300/DB7093/fff?text=Puzzle" alt="Puzzle" style="max-width:100%; border-radius:10px; margin:10px 0;">
+  </section>
+
+  <section id="gallery">
+    <h2>Animated Gallery 🌸</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300/FFB6C1/fff?text=Memory+1" alt="Memory 1">
+      <img src="https://via.placeholder.com/300/FF69B4/fff?text=Memory+2" alt="Memory 2">
+      <img src="https://via.placeholder.com/300/FF1493/fff?text=Memory+3" alt="Memory 3">
+      <img src="https://via.placeholder.com/300/DB7093/fff?text=Memory+4" alt="Memory 4">
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Countdown Timer
+    const countdownElement = document.getElementById('countdown');
+    const birthday = new Date("2025-12-30T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = birthday - now;
+      if (distance < 0) {
+        countdownElement.innerHTML = "🎉 It's Your Birthday! 🎉";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Section Navigation
+    const sections = { homeBtn: 'home', loveBtn: 'love', giftBtn: 'gift', puzzleBtn: 'puzzle', galleryBtn: 'gallery' };
+    Object.keys(sections).forEach(btnId => {
+      document.getElementById(btnId).addEventListener('click', () => {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sections[btnId]).classList.add('active');
+      });
+    });
+
+    // Floating Hearts
+    function createHeart() {
+      const container = document.getElementById('heartContainer');
+      const heart = document.createElement('div');
+      heart.style.position = 'absolute';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (20 + Math.random() * 40) + 'px';
+      heart.style.color = '#FF4B7C';
+      heart.style.willChange = 'transform, opacity';
+      heart.innerHTML = '❤️';
+
+      heart.animate([
+        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+        { transform: 'translateY(-800px) rotate(360deg)', opacity: 0 }
+      ], {
+        duration: 5000 + Math.random() * 3000,
+        easing: 'linear',
+        fill: 'forwards'
+      });
+
+      container.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
 </body>
 </html>
