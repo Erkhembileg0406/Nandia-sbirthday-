@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nandas Surprise 💖</title>
+  <title>Nandia's Birthday 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
@@ -13,12 +13,36 @@
     nav { margin-top: 10px; display:flex; flex-wrap:wrap; justify-content:center; gap: 8px; }
     nav button { padding: 10px 15px; border: none; border-radius: 8px; background: #FF4B7C; color: #fff; font-size: 1em; cursor: pointer; transition: background 0.3s; }
     nav button:hover { background: #FF6F91; }
+
     section { padding: 40px 15px; min-height: 80vh; display: none; text-align: center; animation: fadeIn 1s ease-in-out; }
     section.active { display: block; }
+
     .countdown { font-size: 1.8em; margin-top: 20px; color: #FF6F91; }
+
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .gallery img { width: 45%; margin: 5px; border-radius: 10px; }
-    @media (max-width: 480px) { h1 { font-size: 1.8em; } .countdown { font-size: 1.2em; } nav button { font-size: 0.8em; padding: 6px 10px; } .gallery img { width: 90%; margin: 5px auto; display: block; } }
+
+    .gallery img { width: 45%; margin: 5px; border-radius: 10px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); }
+
+    @media (max-width: 480px) { 
+      h1 { font-size: 1.8em; } 
+      .countdown { font-size: 1.2em; } 
+      nav button { font-size: 0.8em; padding: 6px 10px; } 
+      .gallery img { width: 90%; margin: 5px auto; display: block; } 
+    }
+
+    /* Quiz Section Styling */
+    #quiz h2 { margin-bottom: 20px; font-size: 2em; color: #FF4B7C; }
+    .quiz-question { background: rgba(255, 255, 255, 0.15); padding: 15px 20px; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); text-align: left; }
+    .quiz-question label { display: block; margin: 8px 0; cursor: pointer; font-size: 1em; }
+    #submitQuiz { margin-top: 20px; padding: 12px 20px; font-size: 1em; border: none; border-radius: 10px; background: #FF4B7C; color: #fff; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: background 0.3s; }
+    #submitQuiz:hover { background: #FF6F91; }
+    #quizResult { margin-top: 20px; font-size: 1.6em; color: #FFD6EA; text-align: center; font-weight: bold; text-shadow: 0 0 10px #FFB6C1, 0 0 20px #FF69B4; transition: all 0.5s ease-in-out; }
+
+    @media (max-width: 480px) {
+      .quiz-question { padding: 12px 15px; }
+      #submitQuiz { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -39,7 +63,7 @@
       <button id="homeBtn">Home</button>
       <button id="loveBtn">Reasons I Love You</button>
       <button id="giftBtn">Virtual Gift Box</button>
-      <button id="puzzleBtn">Puzzle / Riddle Game</button>
+      <button id="quizBtn">Quiz 💖</button>
       <button id="galleryBtn">Animated Gallery</button>
     </nav>
   </header>
@@ -52,7 +76,6 @@
 
   <section id="love">
     <h2>Reasons I Love You ❤️</h2>
-    
     <ul>
       <li>Your smile brightens my day</li>
       <li>You make everything fun</li>
@@ -71,11 +94,74 @@
     <img src="https://via.placeholder.com/300/FF1493/fff?text=Gift" alt="Gift" style="max-width:100%; border-radius:10px; margin:10px 0;">
   </section>
 
-  <section id="puzzle">
-    <h2>Puzzle / Riddle Game 🧩</h2>
-    <p>Example: What has keys but can’t open locks?</p>
-    <button onclick="alert('Answer: A piano! 🎹')">Show Answer</button>
-    <img src="https://via.placeholder.com/300/DB7093/fff?text=Puzzle" alt="Puzzle" style="max-width:100%; border-radius:10px; margin:10px 0;">
+  <section id="quiz">
+    <h2>How Well Do You Know Me? 💖</h2>
+    <form id="quizFormInner">
+      <ol style="padding-left:0; list-style:none;">
+        <li class="quiz-question">
+          1. Favorite color? <br>
+          <label><input type="radio" name="q1" value="A"> Blue</label>
+          <label><input type="radio" name="q1" value="B"> Pink</label>
+          <label><input type="radio" name="q1" value="C"> Red</label>
+        </li>
+        <li class="quiz-question">
+          2. First trip together? <br>
+          <label><input type="radio" name="q2" value="A"> Beach</label>
+          <label><input type="radio" name="q2" value="B"> Mountains</label>
+          <label><input type="radio" name="q2" value="C"> City</label>
+        </li>
+        <li class="quiz-question">
+          3. My favorite dessert? <br>
+          <label><input type="radio" name="q3" value="A"> Chocolate cake</label>
+          <label><input type="radio" name="q3" value="B"> Ice cream</label>
+          <label><input type="radio" name="q3" value="C"> Fruit tart</label>
+        </li>
+        <li class="quiz-question">
+          4. Ideal weekend activity? <br>
+          <label><input type="radio" name="q4" value="A"> Movie night</label>
+          <label><input type="radio" name="q4" value="B"> Hiking</label>
+          <label><input type="radio" name="q4" value="C"> Shopping</label>
+        </li>
+        <li class="quiz-question">
+          5. My favorite flower color? <br>
+          <label><input type="radio" name="q5" value="A"> Red</label>
+          <label><input type="radio" name="q5" value="B"> White</label>
+          <label><input type="radio" name="q5" value="C"> Yellow</label>
+        </li>
+        <li class="quiz-question">
+          6. My favorite animal? <br>
+          <label><input type="radio" name="q6" value="A"> Dog</label>
+          <label><input type="radio" name="q6" value="B"> Cat</label>
+          <label><input type="radio" name="q6" value="C"> Rabbit</label>
+        </li>
+        <li class="quiz-question">
+          7. Favorite song genre? <br>
+          <label><input type="radio" name="q7" value="A"> Pop</label>
+          <label><input type="radio" name="q7" value="B"> Rock</label>
+          <label><input type="radio" name="q7" value="C"> Romantic</label>
+        </li>
+        <li class="quiz-question">
+          8. My favorite drink? <br>
+          <label><input type="radio" name="q8" value="A"> Coffee</label>
+          <label><input type="radio" name="q8" value="B"> Tea</label>
+          <label><input type="radio" name="q8" value="C"> Juice</label>
+        </li>
+        <li class="quiz-question">
+          9. My favorite movie type? <br>
+          <label><input type="radio" name="q9" value="A"> Comedy</label>
+          <label><input type="radio" name="q9" value="B"> Romance</label>
+          <label><input type="radio" name="q9" value="C"> Action</label>
+        </li>
+        <li class="quiz-question">
+          10. What I love most? <br>
+          <label><input type="radio" name="q10" value="A"> Sleep</label>
+          <label><input type="radio" name="q10" value="B"> Food</label>
+          <label><input type="radio" name="q10" value="C"> You ❤️</label>
+        </li>
+      </ol>
+      <button type="button" id="submitQuiz">Submit</button>
+    </form>
+    <div id="quizResult"></div>
   </section>
 
   <section id="gallery">
@@ -88,30 +174,24 @@
     </div>
   </section>
 
-  <!-- JavaScript -->
   <script>
     // Countdown Timer
     const countdownElement = document.getElementById('countdown');
     const birthday = new Date("2025-12-30T00:00:00").getTime();
-
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = birthday - now;
-      if (distance < 0) {
-        countdownElement.innerHTML = "🎉 It's Your Birthday! 🎉";
-        return;
-      }
+      if (distance < 0) { countdownElement.innerHTML = "🎉 It's Your Birthday! 🎉"; return; }
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    setInterval(updateCountdown, 1000); updateCountdown();
 
     // Section Navigation
-    const sections = { homeBtn: 'home', loveBtn: 'love', giftBtn: 'gift', puzzleBtn: 'puzzle', galleryBtn: 'gallery' };
+    const sections = { homeBtn: 'home', loveBtn: 'love', giftBtn: 'gift', quizBtn: 'quiz', galleryBtn: 'gallery' };
     Object.keys(sections).forEach(btnId => {
       document.getElementById(btnId).addEventListener('click', () => {
         document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
@@ -125,24 +205,37 @@
       const heart = document.createElement('div');
       heart.style.position = 'absolute';
       heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.fontSize = (20 + Math.random() * 40) + 'px';
-      heart.style.color = '#FF4B7C';
+      heart.style.fontSize = (20 + Math.random() * 30) + 'px';
+      heart.style.color = '#FF69B4';
       heart.style.willChange = 'transform, opacity';
-      heart.innerHTML = '❤️';
-
+      heart.innerHTML = '💖';
       heart.animate([
-        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-        { transform: 'translateY(-800px) rotate(360deg)', opacity: 0 }
-      ], {
-        duration: 5000 + Math.random() * 3000,
-        easing: 'linear',
-        fill: 'forwards'
-      });
-
+        { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+        { transform: `translateY(-500px) rotate(${Math.random()*360}deg)`, opacity: 0 }
+      ], { duration: 3000 + Math.random()*2000, easing: 'ease-out', fill: 'forwards' });
       container.appendChild(heart);
-      setTimeout(() => heart.remove(), 8000);
+      setTimeout(() => heart.remove(), 5000);
     }
     setInterval(createHeart, 500);
+
+    // Quiz Logic
+    const correctAnswers = { q1: "B", q2: "A", q3: "A", q4: "A", q5: "A", q6: "B", q7: "C", q8: "C", q9: "B", q10: "C" };
+    document.getElementById('submitQuiz').addEventListener('click', () => {
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const q = document.querySelector(`input[name=q${i}]:checked`);
+        if (q && q.value === correctAnswers[`q${i}`]) score++;
+      }
+      let message = "";
+      if(score === 10) message = "Perfect! You know me so well! 😍";
+      else if(score >= 7) message = "Great job! You really know me 💖";
+      else if(score >= 4) message = "Not bad! But you can learn more about me 😉";
+      else message = "Oops! Looks like you need more love lessons 😘";
+      const resultEl = document.getElementById('quizResult');
+      resultEl.innerHTML = `You scored ${score}/10<br>${message}`;
+      // Trigger confetti hearts
+      for(let i=0; i<30; i++) createHeart();
+    });
   </script>
 
 </body>
