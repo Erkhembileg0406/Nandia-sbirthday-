@@ -1,259 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nandia's Birthday 💖</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  * { box-sizing: border-box; }
-  body { margin:0; font-family:'Roboto', sans-serif; background: linear-gradient(135deg, #FFC1CC, #FFDEE9); color:#fff; min-height:100vh; overflow-x:hidden; }
-  header { padding:15px 10px; text-align:center; position:sticky; top:0; background:rgba(255,192,203,0.95); z-index:1000; }
-  h1 { font-family:'Parisienne', cursive; font-size:2.5em; margin:0; line-height:1.2; }
-  nav { margin-top:10px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
-  nav button { padding:10px 15px; border:none; border-radius:8px; background:#FF4B7C; color:#fff; font-size:1em; cursor:pointer; transition: background 0.3s; }
-  nav button:hover:not(:disabled) { background:#FF6F91; }
-  nav button:disabled { opacity:0.5; cursor: not-allowed; }
-  section { padding:40px 15px; min-height:80vh; display:none; text-align:center; animation:fadeIn 1s ease-in-out; }
-  section.active { display:block; }
-  .countdown { font-size:1.8em; margin-top:20px; color:#FF6F91; }
-  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-  .gallery img { width:45%; margin:5px; border-radius:10px; }
-  @media(max-width:480px){ h1{ font-size:1.8em;} .countdown{font-size:1.2em;} nav button{font-size:0.8em; padding:6px 10px;} .gallery img{width:90%; margin:5px auto; display:block;} }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nandia's Birthday 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
 
-  /* Quiz styling */
-  #quiz form { text-align:left; max-width:500px; margin:20px auto; background:rgba(255,255,255,0.1); padding:20px; border-radius:15px; box-shadow:0 0 15px rgba(255,105,147,0.5); }
-  #quiz ol { padding-left:20px; }
-  #quiz li { margin-bottom:15px; }
-  #quiz label { display:block; margin:5px 0; cursor:pointer; }
-  #quizResult { margin-top:20px; font-size:1.6em; color:#FFB6C1; font-weight:bold; text-shadow:0 0 10px #fff; }
+    /* ================= 247 ESSAY SECTION ================= */
+#gift {
+  padding: 25px 12px;
+}
 
-  /* Slideshow and glowing hearts */
-  #slideshow-container { position:relative; width:80%; max-width:400px; height:300px; margin:20px auto; border-radius:15px; overflow:hidden; box-shadow:0 0 20px #FF69B4, 0 0 40px #FFB6C1; }
-  #glowHearts { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:5; }
-  #slideshow-container .slide { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; }
-  @keyframes floatGlow { 0%{transform:translateY(0) scale(1);opacity:0.7;} 50%{transform:translateY(-20px) scale(1.2);opacity:1;} 100%{transform:translateY(-40px) scale(1);opacity:0;} }
-</style>
+#gift .essay-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#gift .essay-box {
+  width: 100%;
+  max-width: 600px;
+  min-height: 70vh;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 26px 22px;
+  color: #fff;
+  line-height: 1.8;
+  box-shadow:
+    0 0 20px rgba(255, 75, 124, 0.6),
+    0 0 50px rgba(255, 75, 124, 0.4);
+  backdrop-filter: blur(10px);
+  animation: essayGlow 3s ease-in-out infinite alternate;
+  background: rgba(255, 248, 240, 0.92);
+  color: #2b1f1f;
+  box-shadow:
+  0 0 20px rgba(255, 75, 124, 0.35),
+  0 0 45px rgba(255, 75, 124, 0.25);
+
+
+
+}
+
+@keyframes essayGlow {
+  from {
+    box-shadow:
+      0 0 20px rgba(255, 75, 124, 0.5),
+      0 0 40px rgba(255, 75, 124, 0.3);
+  }
+  to {
+    box-shadow:
+      0 0 28px rgba(255, 75, 124, 0.9),
+      0 0 60px rgba(255, 75, 124, 0.6);
+  }
+}
+
+#gift .essay-title {
+  font-family: 'Parisienne', cursive;
+  font-size: 2.6em;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+#gift .essay-subtitle {
+  text-align: center;
+  font-size: 0.95em;
+  opacity: 0.85;
+  margin-bottom: 22px;
+}
+
+#gift .essay-content {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+#gift .essay-content p {
+  margin-bottom: 16px;
+}
+
+/* Scrollbar (mobile-friendly) */
+#gift .essay-content::-webkit-scrollbar {
+  width: 6px;
+}
+#gift .essay-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  #gift .essay-box {
+    min-height: 75vh;
+    padding: 22px 18px;
+  }
+}
+
+
+
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Roboto', sans-serif; background: linear-gradient(135deg, #FFC1CC, #FFDEE9); color: #fff; min-height: 100vh; overflow-x: hidden; }
+    header { padding: 15px 10px; text-align: center; position: sticky; top: 0; background: rgba(255, 192, 203, 0.95); z-index: 1000; }
+    h1 { font-family: 'Parisienne', cursive; font-size: 2.5em; margin: 0; line-height: 1.2; }
+    nav { margin-top: 10px; display:flex; flex-wrap:wrap; justify-content:center; gap: 8px; }
+    nav button { padding: 10px 15px; border: none; border-radius: 8px; background: #FF4B7C; color: #fff; font-size: 1em; cursor: pointer; transition: background 0.3s; }
+    nav button:hover { background: #FF6F91; }
+
+    section { padding: 40px 15px; min-height: 80vh; display: none; text-align: center; animation: fadeIn 1s ease-in-out; }
+    section.active { display: block; }
+
+    .countdown { font-size: 1.8em; margin-top: 20px; color: #FF6F91; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .gallery img { width: 45%; margin: 5px; border-radius: 10px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); }
+
+    @media (max-width: 480px) { 
+      h1 { font-size: 1.8em; } 
+      .countdown { font-size: 1.2em; } 
+      nav button { font-size: 0.8em; padding: 6px 10px; } 
+      .gallery img { width: 90%; margin: 5px auto; display: block; } 
+    }
+/*the reason I love you */
+#love {
+    padding: 40px 15px;
+    background: linear-gradient(135deg, rgba(255,192,203,0.3), rgba(255,105,180,0.3));
+    text-align: center;
+  }
+
+  #love h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #FF4B7C;
+  }
+
+  #love ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto 25px;
+  }
+
+  #love li {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 105, 147, 0.3);
+    position: relative;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  #love li::before {
+    content: "💖";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+  }
+
+  #love li:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  #love li span {
+    color: #ff0026;
+    font-weight: 700;
+  }
+
+  #love img {
+    border-radius: 15px;
+    max-width: 90%;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+    transition: transform 0.3s;
+  }
+
+  #love img:hover {
+    transform: scale(1.05);
+  }
+
+  @media(max-width:480px){
+    #love h2 {
+      font-size: 2rem;
+    }
+    #love li {
+      font-size: 1rem;
+      padding: 12px 15px;
+    }
+    #love img {
+      width: 95%;
+    }
+  }
+
+    /* Quiz Section Styling */
+    #quiz h2 { margin-bottom: 20px; font-size: 2em; color: #FF4B7C; }
+    .quiz-question { background: rgba(255, 255, 255, 0.15); padding: 15px 20px; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); text-align: left; }
+    .quiz-question label { display: block; margin: 8px 0; cursor: pointer; font-size: 1em; }
+    #submitQuiz { margin-top: 20px; padding: 12px 20px; font-size: 1em; border: none; border-radius: 10px; background: #FF4B7C; color: #fff; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: background 0.3s; }
+    #submitQuiz:hover { background: #FF6F91; }
+    #quizResult { margin-top: 20px; font-size: 1.6em; color: #FFD6EA; text-align: center; font-weight: bold; text-shadow: 0 0 10px #FFB6C1, 0 0 20px #FF69B4; transition: all 0.5s ease-in-out; }
+
+    @media (max-width: 480px) {
+      .quiz-question { padding: 12px 15px; }
+      #submitQuiz { width: 100%; }
+    }
+
+
+
+  /* gallery section */
+  @keyframes floatGlow {
+  0% { transform: translateY(0) scale(1); opacity:0.7; }
+  50% { transform: translateY(-20px) scale(1.2); opacity:1; }
+  100% { transform: translateY(-40px) scale(1); opacity:0; }
+}
+
+  </style>
 </head>
 <body>
 
-<!-- Heart Container -->
-<div id="heartContainer" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:9999;"></div>
+  <!-- Heart Container -->
+  <div id="heartContainer" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:9999;"></div>
 
-<!-- Background Music -->
-<audio autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-<!-- Header & Menu -->
-<header>
-  <h1>Nandia's Birthday 💖</h1>
- <nav>
-  <button id="homeBtn">Home</button>
-  <button id="loveBtn">Reasons I Love You</button>
-  <button id="giftBtn">Virtual Gift Box</button>
-  <button id="quizBtn">Quiz</button>
-  <button id="galleryBtn">Animated Gallery</button>
-</nav>
-</header>
+  <!-- Header & Menu -->
+  <header>
+    <h1>Nandia's Birthday 💖</h1>
+    <nav>
+      <button id="homeBtn">Home🎂</button>
+      <button id="loveBtn">Reasons I Love You📃</button>
+      <button id="giftBtn">247💌</button>
+      <button id="quizBtn">Quiz 💖</button>
+      <button id="galleryBtn">Animated Gallery🌸</button>
+    </nav>
+  </header>
 
-<!-- Sections -->
-<section id="home" class="active">
-  <h2>Countdown to December 30 🎂</h2>
-  <div class="countdown" id="countdown">Loading...</div>
-</section>
+  <!-- Sections -->
+  <section id="home" class="active">
+    <h2>Countdown to December 30 🎂</h2>
+    <div class="countdown" id="countdown">Loading...</div>
+  </section>
 
-<section id="love">
-  <h2>Reasons I Love You ❤️</h2>
+
+
+
+
+
+
+
+
+  <section id="love">
+    <h2>Reasons I Love You ❤️</h2>
   <ul>
-    <li>Your smile brightens my day</li>
-    <li>You make everything fun</li>
-    <li>Your kindness inspires me</li>
-    <li>You are my safe place</li>
-    <li>Your laughter is contagious</li>
+    <li>Your <span>smile</span> brightens my day</li>
+    <li>You make <span>everything fun</span></li>
+    <li>Your <span>kindness</span> inspires me</li>
+    <li>You are my <span>safe place</span></li>
+    <li>Your <span>laughter</span> is contagious</li>
   </ul>
-  <img src="YOUR_IMAGE1_URL" alt="Memory 1" style="max-width:100%; border-radius:10px; margin:10px 0;">
-  <img src="YOUR_IMAGE2_URL" alt="Memory 2" style="max-width:100%; border-radius:10px; margin:10px 0;">
-</section>
 
-<section id="gift">
-  <h2>Virtual Gift Box 🎁</h2>
-  <button onclick="alert('Surprise! You are my greatest gift 🥰')">Open Gift</button>
-  <img src="YOUR_GIFT_IMAGE_URL" alt="Gift" style="max-width:100%; border-radius:10px; margin:10px 0;">
-</section>
 
-<section id="quiz">
-  <h2>How Well Do You Know Me? 💖</h2>
-  <form id="quizForm">
-    <ol>
-      <li>Favorite color? 
-        <label><input type="radio" name="q1" value="A"> Blue</label>
-        <label><input type="radio" name="q1" value="B"> Pink</label>
-        <label><input type="radio" name="q1" value="C"> Red</label>
-      </li>
-      <li>First trip together? 
-        <label><input type="radio" name="q2" value="A"> Beach</label>
-        <label><input type="radio" name="q2" value="B"> Mountains</label>
-        <label><input type="radio" name="q2" value="C"> City</label>
-      </li>
-      <li>My favorite dessert? 
-        <label><input type="radio" name="q3" value="A"> Chocolate cake</label>
-        <label><input type="radio" name="q3" value="B"> Ice cream</label>
-        <label><input type="radio" name="q3" value="C"> Fruit tart</label>
-      </li>
-      <li>Ideal weekend activity? 
-        <label><input type="radio" name="q4" value="A"> Movie night</label>
-        <label><input type="radio" name="q4" value="B"> Hiking</label>
-        <label><input type="radio" name="q4" value="C"> Shopping</label>
-      </li>
-      <li>My favorite color of flowers? 
-        <label><input type="radio" name="q5" value="A"> Red</label>
-        <label><input type="radio" name="q5" value="B"> White</label>
-        <label><input type="radio" name="q5" value="C"> Yellow</label>
-      </li>
-      <li>My favorite animal? 
-        <label><input type="radio" name="q6" value="A"> Dog</label>
-        <label><input type="radio" name="q6" value="B"> Cat</label>
-        <label><input type="radio" name="q6" value="C"> Rabbit</label>
-      </li>
-      <li>Favorite song genre? 
-        <label><input type="radio" name="q7" value="A"> Pop</label>
-        <label><input type="radio" name="q7" value="B"> Rock</label>
-        <label><input type="radio" name="q7" value="C"> Romantic</label>
-      </li>
-      <li>My favorite drink? 
-        <label><input type="radio" name="q8" value="A"> Coffee</label>
-        <label><input type="radio" name="q8" value="B"> Tea</label>
-        <label><input type="radio" name="q8" value="C"> Juice</label>
-      </li>
-      <li>My favorite movie type? 
-        <label><input type="radio" name="q9" value="A"> Comedy</label>
-        <label><input type="radio" name="q9" value="B"> Romance</label>
-        <label><input type="radio" name="q9" value="C"> Action</label>
-      </li>
-      <li>What I love most? 
-        <label><input type="radio" name="q10" value="A"> Sleep</label>
-        <label><input type="radio" name="q10" value="B"> Food</label>
-        <label><input type="radio" name="q10" value="C"> You ❤️</label>
-      </li>
-    </ol>
-    <button type="button" id="submitQuiz" style="padding:10px 15px; font-size:1em; border:none; border-radius:8px; background:#FF4B7C; color:#fff; cursor:pointer;">Submit</button>
-  </form>
-  <div id="quizResult"></div>
-</section>
+  </section>
 
-<section id="gallery">
-  <h2>Animated Gallery 🌸</h2>
-  <div id="slideshow-container">
-    <div id="glowHearts"></div>
-    <img src="YOUR_IMAGE1_URL" alt="Memory 1" class="slide">
-    <img src="YOUR_IMAGE2_URL" alt="Memory 2" class="slide" style="display:none;">
-    <img src="YOUR_IMAGE3_URL" alt="Memory 3" class="slide" style="display:none;">
-    <img src="YOUR_IMAGE4_URL" alt="Memory 4" class="slide" style="display:none;">
+
+
+
+
+
+
+
+
+  <section id="gift">
+  <div class="essay-wrapper">
+    <div class="essay-box">
+      <h2 class="essay-title">247</h2>
+      <div class="essay-subtitle">Always. No matter what.</div>
+
+      <div class="essay-content">
+        <p>
+          This is where your essay begins.
+        </p>
+
+        <p>
+          Write everything you want her to read slowly, quietly,
+          and personally. This space is meant to feel like a letter,
+          not a webpage.
+        </p>
+
+        <p>
+          You can write as much as you want here.
+          Long paragraphs are completely okay.
+        </p>
+
+        <p>
+          This box is designed to feel intimate and calm,
+          especially on a phone.
+        </p>
+
+        <p>
+          She can scroll gently and take her time.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+  
+  <section id="quiz">
+    <h2>How Well Do You Know Me? 💖</h2>
+    <form id="quizFormInner">
+      <ol style="padding-left:0; list-style:none;">
+        <li class="quiz-question">
+          1. Favorite color? <br>
+          <label><input type="radio" name="q1" value="A"> Blue</label>
+          <label><input type="radio" name="q1" value="B"> Pink</label>
+          <label><input type="radio" name="q1" value="C"> Red</label>
+        </li>
+        <li class="quiz-question">
+          2. First trip together? <br>
+          <label><input type="radio" name="q2" value="A"> Beach</label>
+          <label><input type="radio" name="q2" value="B"> Mountains</label>
+          <label><input type="radio" name="q2" value="C"> City</label>
+        </li>
+        <li class="quiz-question">
+          3. My favorite dessert? <br>
+          <label><input type="radio" name="q3" value="A"> Chocolate cake</label>
+          <label><input type="radio" name="q3" value="B"> Ice cream</label>
+          <label><input type="radio" name="q3" value="C"> Fruit tart</label>
+        </li>
+        <li class="quiz-question">
+          4. Ideal weekend activity? <br>
+          <label><input type="radio" name="q4" value="A"> Movie night</label>
+          <label><input type="radio" name="q4" value="B"> Hiking</label>
+          <label><input type="radio" name="q4" value="C"> Shopping</label>
+        </li>
+        <li class="quiz-question">
+          5. My favorite flower color? <br>
+          <label><input type="radio" name="q5" value="A"> Red</label>
+          <label><input type="radio" name="q5" value="B"> White</label>
+          <label><input type="radio" name="q5" value="C"> Yellow</label>
+        </li>
+        <li class="quiz-question">
+          6. My favorite animal? <br>
+          <label><input type="radio" name="q6" value="A"> Dog</label>
+          <label><input type="radio" name="q6" value="B"> Cat</label>
+          <label><input type="radio" name="q6" value="C"> Rabbit</label>
+        </li>
+        <li class="quiz-question">
+          7. Favorite song genre? <br>
+          <label><input type="radio" name="q7" value="A"> Pop</label>
+          <label><input type="radio" name="q7" value="B"> Rock</label>
+          <label><input type="radio" name="q7" value="C"> Romantic</label>
+        </li>
+        <li class="quiz-question">
+          8. My favorite drink? <br>
+          <label><input type="radio" name="q8" value="A"> Coffee</label>
+          <label><input type="radio" name="q8" value="B"> Tea</label>
+          <label><input type="radio" name="q8" value="C"> Juice</label>
+        </li>
+        <li class="quiz-question">
+          9. My favorite movie type? <br>
+          <label><input type="radio" name="q9" value="A"> Comedy</label>
+          <label><input type="radio" name="q9" value="B"> Romance</label>
+          <label><input type="radio" name="q9" value="C"> Action</label>
+        </li>
+        <li class="quiz-question">
+          10. What I love most? <br>
+          <label><input type="radio" name="q10" value="A"> Sleep</label>
+          <label><input type="radio" name="q10" value="B"> Food</label>
+          <label><input type="radio" name="q10" value="C"> You ❤️</label>
+        </li>
+      </ol>
+      <button type="button" id="submitQuiz">Submit</button>
+    </form>
+    <div id="quizResult"></div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="gallery">
+  <h2>Animated Gallery 🌸</h2>
+  <div id="slideshow-container" style="position:relative; width:80%; max-width:400px; height:300px; margin:20px auto; border-radius:15px; overflow:hidden; box-shadow:0 0 20px #FF69B4,0 0 40px #FFB6C1;">
+    <div id="glowHearts" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:5;"></div>
+    <img src="https://raw.githubusercontent.com/Erkhembileg0406/Nandia-sbirthday-/main/image1.webp" class="slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; display:block;">
+    <img src="https://raw.githubusercontent.com/Erkhembileg0406/Nandia-sbirthday-/main/images2.jpg" class="slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; display:none;">
+    <img src="https://raw.githubusercontent.com/Erkhembileg0406/Nandia-sbirthday-/main/images3.jpg" class="slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; display:none;">
+    <img src="https://raw.githubusercontent.com/Erkhembileg0406/Nandia-sbirthday-/main/images4.PNG" class="slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; display:none;">
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
-  // Floating Hearts Background
-  function createHeart(){
-    const container=document.getElementById('heartContainer');
-    const heart=document.createElement('div');
-    heart.style.position='absolute';
-    heart.style.left=Math.random()*window.innerWidth+'px';
-    heart.style.fontSize=(20+Math.random()*40)+'px';
-    heart.style.color='#FF4B7C';
-    heart.style.willChange='transform, opacity';
-    heart.innerHTML='❤️';
-    heart.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(-800px) rotate(360deg)',opacity:0}],{duration:5000+Math.random()*3000,easing:'linear',fill:'forwards'});
-    container.appendChild(heart);
-    setTimeout(()=>heart.remove(),8000);
-  }
-  setInterval(createHeart,500);
+  // Slideshow Logic
+  let slideIndex = 0;
+const slides = document.querySelectorAll("#slideshow-container .slide");
 
-  // Countdown and Unlock
-  const countdownElement=document.getElementById('countdown');
-  const birthday=new Date("2025-12-30T00:00:00").getTime();
-  const buttonsToUnlock=[document.getElementById('loveBtn'),document.getElementById('giftBtn'),document.getElementById('quizBtn'),document.getElementById('galleryBtn')];
+function showSlides() {
+  slides.forEach(slide => slide.style.display = "none"); // hide all slides
+  slideIndex++;
+  if(slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex-1].style.display = "block"; // show current slide
+}
 
-  function updateCountdown(){
-    const now=new Date().getTime();
-    const distance=birthday-now;
-    if(distance<0){
-      countdownElement.innerHTML="🎉 It's Your Birthday! 🎉";
-      buttonsToUnlock.forEach(btn=>btn.disabled=false);
-      return;
-    }
-    const days=Math.floor(distance/(1000*60*60*24));
-    const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-    const seconds=Math.floor((distance%(1000*60))/1000);
-    countdownElement.innerHTML=`${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
-  setInterval(updateCountdown,1000);
-  updateCountdown();
+showSlides();
+setInterval(showSlides, 4000); // change image every 4 seconds
+ // Glowing hearts inside gallery
+const glowContainer = document.getElementById("glowHearts");
+function createGlowHeart(){
+  const heart = document.createElement("div");
+  heart.innerHTML = "💖";
+  heart.style.position = "absolute";
+  heart.style.left = Math.random() * 90 + "%";
+  heart.style.top = Math.random() * 90 + "%";
+  heart.style.fontSize = (10 + Math.random() * 20) + "px";
+  heart.style.opacity = 0.7;
+  heart.style.animation = `floatGlow ${3 + Math.random()*2}s ease-in-out forwards`;
+  glowContainer.appendChild(heart);
+  setTimeout(()=>heart.remove(), 5000);
+}
+setInterval(createGlowHeart, 500);
 
-  // Section Navigation with lock popup
- const sections={homeBtn:'home',loveBtn:'love',giftBtn:'gift',quizBtn:'quiz',galleryBtn:'gallery'};
-
-Object.keys(sections).forEach(btnId=>{
-  const btn=document.getElementById(btnId);
-  btn.addEventListener('click',()=>{
-    const now = new Date().getTime();
-    if(now < birthday && btnId !== 'homeBtn'){ 
-      alert("🎁 This section is locked hairaa! Please wait until December 30!"); 
-      return; 
-    }
-    document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
-    document.getElementById(sections[btnId]).classList.add('active');
-  });
-});
-
-
-  // Quiz Logic
-  const correctAnswers={q1:"B",q2:"A",q3:"A",q4:"A",q5:"A",q6:"B",q7:"C",q8:"C",q9:"B",q10:"C"};
-  document.getElementById('submitQuiz').addEventListener('click',()=>{
-    let score=0;
-    for(let i=1;i<=10;i++){
-      const q=document.querySelector(`input[name=q${i}]:checked`);
-      if(q && q.value===correctAnswers[`q${i}`]) score++;
-    }
-    let message="";
-    if(score===10) message="Perfect! You know me so well! 😍";
-    else if(score>=7) message="Great job! You really know me 💖";
-    else if(score>=4) message="Not bad! But you can learn more about me 😉";
-    else message="Oops! Looks like you need more love lessons 😘";
-    document.getElementById('quizResult').innerHTML=`You scored ${score}/10<br>${message}`;
-  });
-
-  // Slideshow
-  let slideIndex=0;
-  const slides=document.querySelectorAll("#slideshow-container .slide");
-  function showSlides(){
-    slides.forEach(slide=>slide.style.display="none");
-    slideIndex++;
-    if(slideIndex>slides.length) slideIndex=1;
-    slides[slideIndex-1].style.display="block";
-  }
-  showSlides();
-  setInterval(showSlides,2000);
-
-  // Glowing Hearts in Slideshow
-  const glowContainer=document.getElementById("glowHearts");
-  function createGlowHeart(){
-    const heart=document.createElement("div");
-    heart.innerHTML="💖";
-    heart.style.position="absolute";
-    heart.style.left=Math.random()*90+"%";
-    heart.style.top=Math.random()*90+"%";
-    heart.style.fontSize=(10+Math.random()*20)+"px";
-    heart.style.opacity=0.7;
-    heart.style.animation=`floatGlow ${3+Math.random()*2}s ease-in-out forwards`;
-    glowContainer.appendChild(heart);
-    setTimeout(()=>heart.remove(),5000);
-  }
-  setInterval(createGlowHeart,500);
 </script>
+
+
+  <script>
+    // Countdown Timer
+    const countdownElement = document.getElementById('countdown');
+    const birthday = new Date("2025-12-30T00:00:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = birthday - now;
+      if (distance < 0) { countdownElement.innerHTML = "🎉 It's Your Birthday! 🎉"; return; }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateCountdown, 1000); updateCountdown();
+
+    // Section Navigation
+    const sections = { homeBtn: 'home', loveBtn: 'love', giftBtn: 'gift', quizBtn: 'quiz', galleryBtn: 'gallery' };
+    Object.keys(sections).forEach(btnId => {
+      document.getElementById(btnId).addEventListener('click', () => {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sections[btnId]).classList.add('active');
+      });
+    });
+
+    // Floating Hearts
+    function createHeart() {
+      const container = document.getElementById('heartContainer');
+      const heart = document.createElement('div');
+      heart.style.position = 'absolute';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (20 + Math.random() * 30) + 'px';
+      heart.style.color = '#FF69B4';
+      heart.style.willChange = 'transform, opacity';
+      heart.innerHTML = '💖';
+      heart.animate([
+        { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+        { transform: `translateY(-500px) rotate(${Math.random()*360}deg)`, opacity: 0 }
+      ], { duration: 3000 + Math.random()*2000, easing: 'ease-out', fill: 'forwards' });
+      container.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 500);
+
+   
+
+    // Quiz Logic
+    const correctAnswers = { q1: "B", q2: "A", q3: "A", q4: "A", q5: "A", q6: "B", q7: "C", q8: "C", q9: "B", q10: "C" };
+    document.getElementById('submitQuiz').addEventListener('click', () => {
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const q = document.querySelector(`input[name=q${i}]:checked`);
+        if (q && q.value === correctAnswers[`q${i}`]) score++;
+      }
+      let message = "";
+      if(score === 10) message = "Perfect! You know me so well! 😍";
+      else if(score >= 7) message = "Great job! You really know me 💖";
+      else if(score >= 4) message = "Not bad! But you can learn more about me 😉";
+      else message = "Oops! Looks like you need more love lessons 😘";
+      const resultEl = document.getElementById('quizResult');
+      resultEl.innerHTML = `You scored ${score}/10<br>${message}`;
+      // Trigger confetti hearts
+      for(let i=0; i<30; i++) createHeart();
+    });
+  </script>
 
 </body>
 </html>
