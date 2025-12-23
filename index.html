@@ -550,15 +550,29 @@ setInterval(createGlowHeart, 500);
     setInterval(updateCountdown, 1000); updateCountdown();
 
     // Section Navigation
-    Object.keys(sections).forEach(btnId => {
-  const btn = document.getElementById(btnId);
-  btn.addEventListener('click', () => {
-    if(btn.disabled) return; // block if disabled
+   const sections = { 
+  homeBtn: 'home', 
+  loveBtn: 'love', 
+  giftBtn: 'gift', 
+  quizBtn: 'quiz', 
+  galleryBtn: 'gallery' 
+};
+
+// List of buttons that are locked until Dec 30
+const lockedBtns = ['loveBtn','giftBtn','quizBtn','galleryBtn'];
+
+Object.keys(sections).forEach(btnId => {
+  document.getElementById(btnId).addEventListener('click', () => {
+    // Check if the button is locked
+    if(lockedBtns.includes(btnId)){
+      alert("You have to wait until December 30 to access this page! 🎉");
+      return; // stop navigation
+    }
+    // Normal navigation
     document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(sections[btnId]).classList.add('active');
   });
 });
-
 
     // Floating Hearts
     function createHeart() {
