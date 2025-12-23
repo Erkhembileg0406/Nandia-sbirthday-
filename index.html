@@ -334,22 +334,29 @@
 
       <div class="essay-content">
         <p>
-         Za hairaa 247 bolchloo, 
-         ehleheesee omnon gants hoer yum durdii. 
-         Hairn Mongoloor bichihdee muu bolhoor ug usgiin aldaa 
+         Za hairaa 247 bolchloo, geel eheldegdee hairn 😂
+         Huuchnii Nandia shig, ogloo chataa harchaal "yooy" zalhuutain gevel
+         bogson deer ni alargdana 😂 
         </p>
- <p>
-         Za hairaa 247 bolchloo, 
-         ehleheesee omnon gants hoer yum durdii. 
-         Hairn Mongoloor bichihdee muu bolhoor ug usgiin aldaa 
+        <p>
+         Yuin turuund durdhad hairn ch 247 bichsen olon jiliin, olon udaagiin turshlagatai bolhoor
+         ene deer minii yaj Nandiag anh nairsan turshlag gardag gej bgaam chn😂. 
+         Gehdee ene udaa hezeech turshij uzeegui zuiliig hiij bna. Ooriin zohioson ulgeriig,
+         ooriin bichsen codedon deeree, oorsdoo gol duriin baatruud bolgon.
+         onoodriin 247-g bichih bolno. Minii hair eniig unshij duusaad heleerei za, 
+         Hairn chmd yg yaj nadad haragdaj baisniig haruulii, utasniihaa note deer bish, esuul comniihoo
+         word deer suugaad bichhees oor medremj 😂
         </p> <p>
-         Za hairaa 247 bolchloo, 
-         ehleheesee omnon gants hoer yum durdii. 
-         Hairn Mongoloor bichihdee muu bolhoor ug usgiin aldaa 
+         Ene udaagiin 247 teheer omnoh omnohoosoo arai oor oor bichihdeh bolno. Erhee's special delivry 
+         gedeg 247. Today's special-d Nandiagiin torson odriig tohiolduulsan 247, mon ene 247 deeree deer durdsan shig,
+         yg l ooriin tosoolloos bii bolson zohioloo huurneh bolno. ❤️ 
         </p> <p>
-         Za hairaa 247 bolchloo, 
-         ehleheesee omnon gants hoer yum durdii. 
-         Hairn Mongoloor bichihdee muu bolhoor ug usgiin aldaa 
+         Za hairn shudargaar mon baharhaltaigaar helhed, nom unshdagui baigaa. Ingeed ali hesgiin ehelvel zugeer ve geed
+         bodood suuj baihad, yg eejiin maani helsen ug sanaand oroh shig. Baga baihad mine, toglood suuj baihaar ydaj neg 
+         nomnii nuur huudsiig ehluul gej ugeldeg bailaa. Tegsen bol hairn tolgoi dotroh 1000 bodluudaa, ali hesgiin ehlel deer
+         ali hesgiin huurnel deer bas aliin togsgol deer bichhee bardam suugaad bichij baih baisan baih. 
+         Gehdee yu baharhaltai esuul tenegch yumuu geech, nom unshdaggui nz banid ni nom unshdag nz ohindoo 
+         oguulleg bichne geed suuj bgaan 😂 
         </p> <p>
          Za hairaa 247 bolchloo, 
          ehleheesee omnon gants hoer yum durdii. 
@@ -543,13 +550,15 @@ setInterval(createGlowHeart, 500);
     setInterval(updateCountdown, 1000); updateCountdown();
 
     // Section Navigation
-    const sections = { homeBtn: 'home', loveBtn: 'love', giftBtn: 'gift', quizBtn: 'quiz', galleryBtn: 'gallery' };
     Object.keys(sections).forEach(btnId => {
-      document.getElementById(btnId).addEventListener('click', () => {
-        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-        document.getElementById(sections[btnId]).classList.add('active');
-      });
-    });
+  const btn = document.getElementById(btnId);
+  btn.addEventListener('click', () => {
+    if(btn.disabled) return; // block if disabled
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(sections[btnId]).classList.add('active');
+  });
+});
+
 
     // Floating Hearts
     function createHeart() {
@@ -586,7 +595,7 @@ setInterval(createGlowHeart, 500);
       else if(score >= 4) message = "За яахав дээ, гэхдээ дахиад бэлдээд үз 😉";
       else message = "Чи албаар алдаж, код ажиллах уу, үзэж байна уу 😂";
       const resultEl = document.getElementById('quizResult');
-      resultEl.innerHTML = `You scored ${score}/10<br>${message}`;
+      resultEl.innerHTML = `Score: ${score}/10<br>${message}`;
       // Trigger confetti hearts
       for(let i=0; i<30; i++) createHeart();
     });
