@@ -49,13 +49,13 @@
 <!-- Header & Menu -->
 <header>
   <h1>Nandia's Birthday 💖</h1>
-  <nav>
-    <button id="homeBtn">Home</button>
-    <button id="loveBtn" disabled>Reasons I Love You</button>
-    <button id="giftBtn" disabled>Virtual Gift Box</button>
-    <button id="quizBtn" disabled>Quiz</button>
-    <button id="galleryBtn" disabled>Animated Gallery</button>
-  </nav>
+ <nav>
+  <button id="homeBtn">Home</button>
+  <button id="loveBtn">Reasons I Love You</button>
+  <button id="giftBtn">Virtual Gift Box</button>
+  <button id="quizBtn">Quiz</button>
+  <button id="galleryBtn">Animated Gallery</button>
+</nav>
 </header>
 
 <!-- Sections -->
@@ -194,15 +194,21 @@
   updateCountdown();
 
   // Section Navigation with lock popup
-  const sections={homeBtn:'home',loveBtn:'love',giftBtn:'gift',quizBtn:'quiz',galleryBtn:'gallery'};
-  Object.keys(sections).forEach(btnId=>{
-    const btn=document.getElementById(btnId);
-    btn.addEventListener('click',()=>{
-      if(btn.disabled){ alert("🎁 This section is locked! Please wait until December 30!"); return; }
-      document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
-      document.getElementById(sections[btnId]).classList.add('active');
-    });
+ const sections={homeBtn:'home',loveBtn:'love',giftBtn:'gift',quizBtn:'quiz',galleryBtn:'gallery'};
+
+Object.keys(sections).forEach(btnId=>{
+  const btn=document.getElementById(btnId);
+  btn.addEventListener('click',()=>{
+    const now = new Date().getTime();
+    if(now < birthday && btnId !== 'homeBtn'){ 
+      alert("🎁 This section is locked hairaa! Please wait until December 30!"); 
+      return; 
+    }
+    document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
+    document.getElementById(sections[btnId]).classList.add('active');
   });
+});
+
 
   // Quiz Logic
   const correctAnswers={q1:"B",q2:"A",q3:"A",q4:"A",q5:"A",q6:"B",q7:"C",q8:"C",q9:"B",q10:"C"};
